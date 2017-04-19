@@ -1,0 +1,73 @@
+CSS SYNTAX
+
+1. At-rules
+	@charset --> specify character set
+	@import --> file inclusion
+	@media --> media querry
+	@keyframes --> keyframe applications
+
+2. CSS Rule Sets(a.k.a. CSS Rules, Style Rules)
+	--> consist of a selector, declaration block
+
+	>>SELECTORS
+		--> select elements in the HTML
+		--> matched elements are called subjects
+		selector syntax:
+			simple selectors separated by combinators with one pseudo element
+			div#abc>p.xyz[title]+span:first-child::after
+							      |
+							      |
+							      V
+							div --> type selector
+							#abc --id selector
+							> --> combinator
+							p --> type selector
+							xyz --> class
+							[title] --> attribute
+							+ --> combinator
+							span --> type selector
+							first-child --> pseudo element
+							after --> pseduo element
+
+			group selectors --> are separated by commas (,)
+			
+			simple selectors
+				type selectors --> names of html elements
+				universal selectors --> represented by an asterisk (*)
+				attribute selectors --> target an element based on its value
+											[attr=value]
+											[attr^=value] --> introduced at CSS3
+				class selectors --> starts with a period (.)
+				id selectors --> starts with a  hashtag (#)
+
+				pseudo class --> starts with a colon(:)
+					target pseudo class--> :target --> introduced at CSS3
+					language psedo class --> :lang()
+					UI elements states pseudo class
+						:enabled		:indeterminate
+						:disabled		:checked
+					structural pseudo class
+						:root			:first-of-type
+						:first-child	:last-of-type
+						:last-child		:only-of-type
+						:only-child		:nth-of-type
+						:nth-child()	:empty
+						:nth-last-child()
+					negation psedo-class
+						:not()
+
+					combinators selectors
+						descendant combinator (whitespace)
+						child combinator (>)
+						sibling combinators
+							adjacent sibling combinators(+)
+							general sibling combinator(~)
+
+					pseudo-elements
+						::first-letter --> CSS3		:first-letter --> CSS1
+						::first-line --> CSS3		:first-line --> CSS1
+						::before --> CSS3			:before --> CSS1
+						::after --> CSS3			:after --> CSS1
+
+
+

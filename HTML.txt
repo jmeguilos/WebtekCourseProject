@@ -1,0 +1,83 @@
+What is HTML?
+	--> is a markup language
+3 Main Aspects of a webpage
+	--> structure and contents
+	--> presentation/aesthetics
+	-->behavioral
+
+Role of HTML in Modern Web Development
+	--> To specify the structure and content
+
+Who Invented HTML?
+	-->Tim Berners-Lee
+
+Who oversees the Development of HTML?
+	--> WWW
+
+VERSIONS of HTML
+1. HTML 1.0
+2. HTML 2.0 --> RFC 1866
+3. HTML 3.0            *********************
+		3.2               This are W3C 
+		4.0--> 1997    		Reccommendations
+		4.01--> 1999   **********************
+
+XHTML --> A reformulation of HTML 4 in XML 1.0
+
+HTML 4.01 ---> has 3 versions
+		Strict
+		Transitional
+		Frameset
+Ian Hickson(WHATWG)
+HTML 5 --> 2014
+
+
+Which document specify the HTML standards? 
+	--> W3C
+
+SYNTAX
+<!DOCTYPE html> -->"standards"
+   <html>
+      <head><title></title></head>
+      <body></body>
+   </html>
+
+Note that the basic syntax of html is --> start tag, content , end tag
+
+SOME TAGS.....
+article, aside, nav, section, header, footer ---> these are introduced in HTML 5
+main
+address --> for contact information purposes 
+div
+h1, h2, h3, h4, h5, h6
+p 
+hr -->thematic break
+pre --> pre formatted text --> preserves white space etc...
+blockquote -->for quotations
+dfn --> defining an abbreviation
+data, time --> represents time or arbitrary data
+wbr --> word break oppurtunity
+ruby, rb, rt, rtc, rp --> ruby annotations
+code, var, samp, kbd
+sup, sub --> superscript, subscript
+i, u, b, mark
+bdi, bdo --> bidirectional text
+span --> for inline text elements
+ins, del --> edited text
+
+table
+	caption
+	colgroup, col
+	thraed, tbody, tfoot
+	tr
+		th, td
+
+form
+	label
+	input
+	button select, datalist
+
+
+
+NOTE: When you have an HTML Document and the browser will eventually parse it, the browser
+		would create a DOM Tree(Document Object Model Tree)
