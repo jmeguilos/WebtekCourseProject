@@ -1,0 +1,227 @@
+JAVASCRIPT
+
+client side scripting --> running a program on the browser environment
+
+Ways on How to call/Associate script to HTML
+1. external --> we can put the script not only on the body
+2. embedded --> do not put the source
+3. inline script --> we use the event Handler elements
+	event additives --> begins with on* (ex. onlick)
+
+**Parsing of the file always starts at the top
+	parsed---->compiled---->rendered
+**Console --> used on  tracing, rerouting etcof the program
+
+2 types of code
+1. Top-level/ Global --> outside the declaration of a function
+2. Function --> only be executed when called
+
+2 Values
+1. defer --> flow of document will flow while fetching of script is being done
+		 --> browser will act in parallel
+2. async --> fetch the script then load the script then execute
+		 --> while waiting it will continue rendering
+		 --> don't wait until the document will be finished on rendering
+
+<no script> --> for browser with no scripting support, or with scripting support diabled
+			--> will only appear on the content when browser can offer
+
+
+JAVASCRIPT OBJECTS
+
+windows --> through this, you can access all the elements a browser can offer
+document --> we will be able to interact with the document (windows.document)
+
+*******************************************************************************************************
+Several ways of getting an element(ex. getElementById())		Note: this will let you change the
+.textcontent															contents of your HTML file
+.innerText
+.innerHTML
+.outerHTML
+.outerText --> entire element in the HTML wil be replaced
+*********************************************************************************************************
+
+.title --> add a title attribute
+.setAttribute --> adding an attribute
+.querySelector --> returns what is being querried (only one)
+.querySelectorAll --> returns all that is being queried
+.matches --> matches/check element whether it matches
+
+Structure explanation:
+  		--------p --->element node
+  		|		|
+  Node--|		|
+  		|		V
+  		 ----hello --->text
+
+
+Retrieving Elements:
+	.getElementByTagName('body')[0]
+
+	.querySelector('.abc')
+		-->only returns first match
+		-->argument you put here in a css selector
+	.querySelectorAll('#p')
+		--> return all the matches
+
+	document.body.matches('body')
+		-->returns the match of a certain selector
+
+
+Changing Contents:
+	p=p.getElementById('p')
+	p.innerHTML('....')
+	.setAttribute  /  .getAttribute
+	custom attributes --> are not defined by the attributes
+	p.style.color='red' --> inline style in js
+
+NOTE:*** Read about Traversal Of Notes on W3C
+
+
+Dynamic Content Creation
+	p.innerHTML = 'hello <em>World</em>'
+	h1 = document.createElement('h1')
+	document.body.appendchild(h1)
+	h1.insertBefore(<one inserting>, <where to be inserted>)
+	h1.replaceChild(<replacement>,<reference>)
+	h1.removeChild(<the one being removed>)
+
+	shallow clone vs. deep clone
+	(false)				(true)
+
+
+Progmatic Constructs
+	Javascript --> imperative, object oriented
+	variables --> used as storage areas
+	Javascript is loosely typed
+
+Declaring Variables
+	a = 10;
+	var b = 10;
+	let c = 10; --> limited to the local block
+	cont d = 10; --> does not support any reassignments
+	console.log()b,c,d
+
+************************************************
+	a=10;			Creating a window 
+	varb=10				property object
+***************************************
+Note: var b=10 --> scope is just within the function
+
+NOTE: There was no Block local scope Variable after ECCMA SCRIPT 5
+
+
+Data Types(Simple(primitive), Reference(structured))
+
+	Simple(Primitive)
+		typeof<x> --> returns the data type of <x>
+		falsy, truthy, 0, 1 '' 'string' --> boolean values
+		number values --> 
+							0b --> binary
+							0 --> octal
+							0x --> hexa
+							e --> scientific notation
+		string values --> there is no char type in js
+		template literals(`)--> for sting on multiple lines
+							--> can also do string interpolation(ex. price:${a*3}`)
+		undefined values --> they don't point a value
+		Primitive Data Types --> number, boolean, string, undefined, null
+
+	Reference(Structured):Numbers, Boolean, String, Array, Date, Error, Function, JSON, 
+							Math, Map, Set, WeakMap, WeakSet
+		*NOTE: String literal is already considered as a String object
+
+
+Functions
+	sayhello --> referencing a function
+	sayhello() --> invoking a function
+
+	*functions without name are very useful when you want to use the function ones(ex. initialization)
+	*you throw anything in js
+	*you can catch anything in js
+	*you can nest a function
+	*function arguements can have default values
+	function rest parameters using ellipsis syntax
+
+
+Arrays
+	--> are dynamic in size
+
+	Array destructuring:
+		var array = [1,2,3,4,5];
+		var [a,b,c,d,e] = array;
+		var[m,n,... others] = array;
+		var [,x, , y]= array;
+
+	Array indexes are non-contigous
+		for(let i in array) {
+			console.log(array[i])
+		}
+
+Mutator 
+	--> going to change the values in an array
+	shift then push --> this is the way js accomodate the queueing in java
+	push() --> add to the last index
+	pop()--> remove the last index
+	shift() --> removes first element
+	unshift() --> adds first element
+	reverse() --> reverses the elements
+	sort(v1, v2)=>Math.sign(v1.length-v2.length)  --> sort it according to the length of the string
+	.splice() --> remove an element in an array and put another element or not
+
+Accessors
+		--> doesn't change the element of the array
+	Iterations
+		--> iterate the elements one by one then apply a function
+	
+		a.filter(function) where function <value>,<index>,<array>
+			ex. 
+				show even numbers of a = [1,2,3,4,5,6,7,8,9,10]
+				 a.filter(v=>v%2==0)
+		a.map() -->calculating a value for each element
+			ex. 
+				a.map(v=> v*2); //*2 of the each element in a
+		every() --> test each element in the array; returns if true
+		some() --> test each elements in the array: returns if some are true
+		a.reduce() --> adds an accumulator
+			ex. 
+				a.reduce((acc,v)=> acc += v) //adds all the elements in the array
+
+		*Sample code that reverses a string
+			var str = 'saint louis university'
+			var rts = str.split('').reverse().join('')
+			//output is 'ytisrevinu siuol tnias'
+
+
+Objects
+	Creating objects
+		var student = {};
+		student.idno = '2131234';
+		student['name'] = 'Juan';
+		student.toString = function();
+			return 1${this.idno}:${this.name}`;
+		localstorage.setItem('2131234', JSON.stringify(student))
+
+		More Sample Code:
+			function Person(name, age) {
+			this.name = name;
+			this.age = age;
+			this.speak = function() {
+					console.log(`Hello ! I'm ${this.name}.`);
+			   }
+			}
+
+			var p = newPerson('Britney', 21);
+			p.speak();
+
+			class Person {
+				contructor(name, age);
+				this.name = name;
+				this.age = age;
+			}
+			p.speak();
+
+
+
+
+
